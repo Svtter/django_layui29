@@ -5,8 +5,8 @@ description = ""
 authors = ["svtter <svtter@163.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
-django = "<4.0"
+python = ">=3.9,<4.0"
+django = "<6.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.2.0"
@@ -19,14 +19,16 @@ mkdocs = "^1.4.3"
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-[[tool.poetry.source]]
-name = "aliyun"
-url = "http://mirrors.cloud.aliyuncs.com/pypi/simple/"
-default = true
-
 # -- FILE: pytest.ini (or tox.ini)
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "conf.settings"
 # -- recommended but optional:
 python_files = "tests.py test_*.py *_tests.py"
 addopts = "-n3"
+
+[tool.poetry.urls]
+homepage = "https://github.com/Svtter/django-layui"
+repository = "https://github.com/Svtter/django-layui.git"
+changelog = "https://github.com/Svtter/django-layui/blob/master/CHANGELOG.md"
+bugs = "https://github.com/Svtter/django-layui/issues"
+# sponsor = "https://github.com/sponsors/svtter"
