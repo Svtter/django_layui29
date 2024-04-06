@@ -7,3 +7,8 @@
 ## Installation
 
 `pip install django_layui29`
+
+## Usage
+
+1. add `django_layui29` to your settings.
+2. in your template, `{% extends 'layui29/base.html' %}`.
