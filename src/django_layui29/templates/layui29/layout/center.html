@@ -1,0 +1,19 @@
+{% extends "layui29/base.html" %}
+{% load static %}
+
+{% block css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'layui29/css/global.css' %}">
+<link rel="stylesheet" href="{% static 'layui29/css/center.css' %}">
+{% endblock css %}
+
+{% block title %}
+    {{ system_name }}
+{% endblock title %}
+
+{% block body %}
+<div class="user-login-container layui-panel layui-padding-5">
+    {% block content %}
+    {% endblock content %}
+</div>
+{% endblock body %}

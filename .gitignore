@@ -345,8 +345,6 @@ temp
 
 log
 .env
-static/produce_process/products/*
-static/produce_process/upload/*
 attach/produce_process/*
 attach/products/*
 attach/raw_material/*
@@ -360,7 +358,6 @@ huey.log
 logs/*machine.py
 machine.py
 
-static
 data
 attach/dictionary/*
 

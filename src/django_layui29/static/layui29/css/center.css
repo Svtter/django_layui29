@@ -1,0 +1,38 @@
+.demo-reg-container {
+    width: 320px;
+    margin: 180px auto 0;
+}
+
+.center-container {
+    width: 480px;
+    margin: 210px auto 0;
+}
+
+.user-login-container {
+    width: 320px;
+    margin: 210px auto 0;
+}
+
+.make-center .layui-icon {
+    position: relative;
+    display: inline-block;
+    margin: 0 2px;
+    top: 2px;
+    font-size: 26px;
+}
+
+.demo-reg-other .layui-icon {
+    position: relative;
+    display: inline-block;
+    margin: 0 2px;
+    top: 2px;
+    font-size: 26px;
+}
+
+.demo-login-other .layui-icon {
+    position: relative;
+    display: inline-block;
+    margin: 0 2px;
+    top: 2px;
+    font-size: 26px;
+}

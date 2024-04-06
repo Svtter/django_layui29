@@ -1,0 +1,58 @@
+.body-content {
+    background-color: #f2f2f2;
+}
+
+.hide-text {
+    /* same color to backgound color */
+    color: #f2f2f2;
+}
+
+.box-container {
+    border: 1px solid #e6e6e6;
+    background-color: white;
+}
+
+.section-header {
+    font-weight: 400;
+    padding: 10px;
+}
+
+
+.result-box {
+    margin:10px;
+}
+
+.wide-form-label {
+    width: 100px
+}
+
+.system-title {
+    color: white;
+}
+
+.pd-15 {
+    padding: 15px;
+}
+
+.mg-10 {
+    margin: 10px;
+}
+
+.exphub-avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.color-blue {
+    color: #1e9fff;
+}
+
+.color-green {
+    color: #16b777;
+}
+
+.color-bluegreen {
+    color: #16baaa;
+}
