@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "django_layui"
+version = "0.1.0"
+description = ""
+authors = ["svtter <svtter@163.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+django = "<4.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.2.0"
+pytest-xdist = "^3.0.2"
+pytest-django = "^4.5.2"
+pre-commit = "^2.20.0"
+mkdocs = "^1.4.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "aliyun"
+url = "http://mirrors.cloud.aliyuncs.com/pypi/simple/"
+default = true
+
+# -- FILE: pytest.ini (or tox.ini)
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "conf.settings"
+# -- recommended but optional:
+python_files = "tests.py test_*.py *_tests.py"
+addopts = "-n3"

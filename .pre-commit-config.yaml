@@ -1,0 +1,56 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+default_stages: [commit, push]
+default_language_version:
+  python: python3.9
+repos:
+  - repo: https://gitee.com/xunxu/pre-commit-hooks.git
+    rev: v4.3.0
+    hooks:
+      - id: check-yaml
+        name: 检查yaml文件是否合规
+      - id: check-added-large-files
+        name: 检查是否提交了超大文件
+      - id: check-merge-conflict
+        name: 检查是否含有未解决的冲突
+
+  - repo: https://gitee.com/mirrors_jorisroovers/gitlint
+    rev: v0.18.0
+    hooks:
+      - id: gitlint
+        name: "检查commit message是否符合  (add|mod|del|fix):.*"
+  - repo: local
+    hooks:
+      - id: isort
+        name: "imports自动格式化"
+        entry: isort
+        language: python
+        types: [python]
+        args:
+          [
+            "--profile", "black",
+            "--multi-line=3",
+            "--trailing-comma",
+            "--force-grid-wrap=0",
+            "--use-parentheses",
+            "--line-width=120",
+          ]
+  - repo: https://gitee.com/xunxu/black
+    rev: 22.3.0
+    hooks:
+      - id: black
+        name: "代码风格格式化"
+        exclude: .venv
+        args: ["--line-length=120", "--target-version=py38"]
+  - repo: https://gitee.com/xunxu/pre-commit-hooks.git
+    rev: v2.3.0
+    hooks:
+      - id: flake8
+        # 在black格式化之后再触发flake8
+        name: flake8检查
+        args:
+          [
+            "--max-line-length=120",
+            "--exclude=__init__.py",
+            "--ignore=E203,E501,W503,W291,E402",
+          ]
