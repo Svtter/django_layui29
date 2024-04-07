@@ -8,6 +8,11 @@
 
 `pip install django_layui29`
 
+## Features
+
+- `center/admin/home` layout.
+- table components.
+
 ## Usage
 
 1. add `django_layui29` to your settings.
