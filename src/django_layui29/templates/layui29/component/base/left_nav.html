@@ -1,0 +1,47 @@
+<script id="page_name" type="text/html">{% if page_name %}{{ page_name }}{% endif %}</script>
+<div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+        <ul class="layui-nav layui-nav-tree">
+            <li class="layui-nav-item">
+                <a id="nav-home" href="#">主页</a>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+            {% comment %} TODO: itemd {% endcomment %}
+            <li class="recognition-section layui-nav-item">
+                <a href="javascript:;">识别算法</a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a id="nav-recognition-upload" href="">上传图像</a>
+                    </dd>
+                    <dd>
+                        <a id="nav-recognition-exp" href="">识别结果</a>
+                    </dd>
+                    <dd>
+                        <a class='m1e3' href="/m1/e3">功能 3</a>
+                    </dd>
+                </dl>
+            <li>
+        <ul>
+        <ul class="layui-nav layui-nav-tree">
+            <li class="layui-nav-item">
+                <a id="nav-exp" href="">数据集管理</a>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-nav-tree">
+            <li class="layui-nav-item">
+                <a id="nav-model" href="">模型管理</a>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-nav-tree">
+            <li class="layui-nav-item">
+                <a id="nav-perf" href="">服务性能</a>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-nav-tree">
+            <li class="layui-nav-item">
+                <a id="nav-setting" href="">设置</a>
+            </li>
+        </ul>
+    </div>
+</div>

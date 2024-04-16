@@ -1,0 +1,214 @@
+{% extends "layui29/base.html" %}
+{% load static %}
+{% block title %}
+    {{ system_name }}
+{% endblock title %}
+{% block css %}
+    {{ block.super }}
+    <link rel="shortcut icon"
+          type="image/png"
+          href="{% static 'layui29/favicon.ico' %}" />
+{% endblock css %}
+{% block body %}
+    <div class="layui-layout layui-layout-admin">
+        {% block header %}
+            {% include "layui29/component/base/header.html" %}
+        {% endblock header %}
+        {% block left_nav %}
+            {% include "layui29/component/base/left_nav.html" %}
+        {% endblock left_nav %}
+        <div class="layui-body body-content">
+            <!-- 内容主体区域 -->
+            {% block debug_msg %}
+                {% if DEBUG %}
+                    {% if page_name %}
+                        <div class="layui-panel debug-panel">
+                            <div style="padding: 32px;">
+                                <div class="layui-tab" lay-filter="debug-handle" lay-allowclose="true">
+                                    <ul class="layui-tab-title">
+                                        <li class="layui-this" lay-id="11">系统变量</li>
+                                        <li lay-id="22">错误信息</li>
+                                    </ul>
+                                    <div class="layui-tab-content">
+                                        <div class="layui-tab-item layui-show">
+                                            <div>username: {{ request.user }}</div>
+                                            <div>user.is_anonymous: {{ request.user.is_anonymous }}.</div>
+                                        </div>
+                                        <div class="layui-tab-item">
+                                            {% if debug_message %}
+                                                {{ debug_message }}
+                                            {% else %}
+                                                no message.
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="pd-15">
+                            <div class="layui-collapse" lay-accordion>
+                                <div class="layui-colla-item">
+                                    <div class="layui-colla-title">django_layui29 debug toolbar</div>
+                                    <div class="layui-colla-content layui-show">
+                                        <blockquote class="layui-elem-quote">
+                                            page_name not exist!
+                                        </blockquote>
+                                    </div>
+                                    {% block DEBUG_CONTENT %}
+                                    {% endblock DEBUG_CONTENT %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            {% endblock debug_msg %}
+            <div class="pd-15">
+                {% block content %}
+                    <blockquote class="layui-elem-quote layui-text">
+                        Layui 框体布局内容主体区域
+                    </blockquote>
+                    <div class="layui-card layui-panel">
+                        <div class="layui-card-header">下面是充数内容，为的是出现滚动条</div>
+                        <div class="layui-card-body">
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            充数内容
+                            <br>
+                            你还真滑到了底部呀
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                {% endblock content %}
+            </div>
+        </div>
+        {% block footer %}
+            <div class="layui-footer">
+                <!-- 底部固定区域 -->
+                ©️ 2023 <a href="https://sun-praise.com">Sun Praise, Inc.</a>
+            </div>
+        {% endblock footer %}
+    </div>
+{% endblock body %}
+{% block js %}
+    {{ block.super }}
+    {% if debug %}
+    <script src="{% static 'js/js.cookie.min.js' %}"></script>
+    {% else %}
+    <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    {% endif %}
+    <script src="{% static 'layui29/js/base.js' %}"></script>
+    <script>
+    // for debug-toolbar and htmlx
+    {% if debug %}
+        if (typeof window.htmx !== "undefined") {
+            htmx.on("htmx:afterSettle", function(detail) {
+                if (
+                    typeof window.djdt !== "undefined"
+                    && detail.target instanceof HTMLBodyElement
+                ) {
+                    djdt.show_toolbar();
+                }
+            });
+        }
+    {% endif %}
+    </script>
+{% endblock js %}

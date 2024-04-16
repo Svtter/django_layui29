@@ -6,3 +6,7 @@ from django.views.generic import TemplateView
 
 class CenterLayout(TemplateView):
     template_name = "testapp/center_example.html"
+
+
+class AdminLayout(TemplateView):
+    template_name = "testapp/admin_example.html"

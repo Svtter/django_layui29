@@ -1,0 +1,73 @@
+<div class="layui-header">
+    <div class="layui-logo layui-hide-xs layui-bg-black">
+        <a class="system-title" href="#" >{{ system_name }}</a>
+    </div>
+    <!-- 头部区域（可配合layui 已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+        <!-- 移动端显示 -->
+        <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm"
+            lay-header-event="menuLeft">
+            <i class="layui-icon layui-icon-spread-left">Hi</i>
+        </li>
+
+        <li class="layui-nav-item layui-hide-xs">
+            <a id="nav-activity" href="#" >活动</a>
+        </li>
+        <li class="layui-nav-item layui-hide-xs">
+            <a href="#" lay-on="toggle_debug">调试面板</a>
+        </li>
+        <li class="layui-nav-item layui-hide-xs">
+            <a href="#" lay-on="toggle_debug">测试页面</a>
+        </li>
+        <li class="layui-nav-item layui-hide-xs">
+            <a href="#">识别</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="">nav group</a>
+            <dl class="layui-nav-child">
+                <dd>
+                    <a href="">menu 11</a>
+                </dd>
+                <dd>
+                    <a href="">menu 22</a>
+                </dd>
+                <dd>
+                    <a href="">menu 33</a>
+                </dd>
+            </dl>
+        </li>
+        {% block more_nav %}
+        {% endblock more_nav %}
+    </ul>
+    <!-- 用户信息区域 -->
+    <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item layui-hide layui-show-sm-inline-block">
+            <a href="">
+                <img class="layui-nav-img"
+                     {% if debug %}
+                     src="//unpkg.com/outeres@0.0.10/img/layui/icon-v2.png"
+                     {% else %}
+                     src="//unpkg.com/outeres@0.0.10/img/layui/icon-v2.png"
+                     {% endif %}
+                     alt="header photo">
+                {{ user.username }}
+            </a>
+            <dl class="layui-nav-child">
+                <dd>
+                    <a href="">个人资料</a>
+                </dd>
+                <dd>
+                    <a href="">设置</a>
+                </dd>
+                <dd>
+                    <a href="#">登出</a>
+                </dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="">
+                <i class="layui-icon layui-icon-more-vertical"></i>
+            </a>
+        </li>
+    </ul>
+</div>
