@@ -13,8 +13,12 @@
 
 ## Features
 
-- `center/admin/home` layout.
+- `center/admin/nomral` layout.
 - table components.
+
+You could run the `testapp` to view the features.
+
+The file `layui29/component/base/header.html` need to be replaced.
 
 ## Usage
 
