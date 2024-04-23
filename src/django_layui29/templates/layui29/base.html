@@ -11,6 +11,11 @@
 </head>
 <body>
 {% block body %}
+{% comment %} for normal.html {% endcomment %}
+    <div class="layui-layout layui-layout-admin">
+    {% block app %}
+    {% endblock app %}
+    </div>
 {% endblock body %}
 <!-- 引入 layui.js -->
 <script src="//unpkg.com/layui@2.9.8/dist/layui.js"></script>

@@ -11,16 +11,16 @@
         </li>
 
         <li class="layui-nav-item layui-hide-xs">
-            <a id="nav-activity" href="#" >活动</a>
+            <a id="nav-activity" href="{% url 'normal' %}" >常规布局</a>
         </li>
         <li class="layui-nav-item layui-hide-xs">
             <a href="#" lay-on="toggle_debug">调试面板</a>
         </li>
         <li class="layui-nav-item layui-hide-xs">
-            <a href="#" lay-on="toggle_debug">测试页面</a>
+            <a href="{% url 'center' %}" lay-on="toggle_debug">中心布局</a>
         </li>
         <li class="layui-nav-item layui-hide-xs">
-            <a href="#">识别</a>
+            <a href="{% url 'admin' %}">管理布局</a>
         </li>
         <li class="layui-nav-item">
             <a href="">nav group</a>

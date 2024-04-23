@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
+
 # Create your views here.
+class NormalLayout(TemplateView):
+    template_name = "testapp/normal_example.html"
 
 
 class CenterLayout(TemplateView):
