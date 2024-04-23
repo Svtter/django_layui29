@@ -20,6 +20,16 @@ You could run the `testapp` to view the features.
 
 The file `layui29/component/base/header.html` need to be replaced.
 
+When doing the replacement, put your apps in front of `django_layui29`, like this:
+
+```python
+INSTALLED_APPS = [
+    ...
+    'your_app',
+    'django_layui29',
+]
+```
+
 ## Usage
 
 1. add `django_layui29` to your settings.
