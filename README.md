@@ -13,10 +13,14 @@
 
 ## Features
 
+This section lists all features about `django-layui29`.
+
 - `center/admin/nomral` layout.
 - table components.
 
-You could run the `testapp` to view the features.
+### Example project
+
+You could run the `testapp` in this [repo](https://github.com/Svtter/django_layui29.git) to view the features.
 
 The file `layui29/component/base/header.html` need to be replaced.
 
