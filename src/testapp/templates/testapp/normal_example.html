@@ -1,7 +1,12 @@
 {% extends "layui29/layout/normal.html" %}
 {% block content %}
-    <div class="layui-form-item container" style="margin: 10px;">
+    <div class="layui-form-item container" style="margin: 10px 0 0 0;">
         <h1>Hello world</h1>
         <p>hello normal template..</p>
     </div>
+    <br>
+    <p>Here is the links...</p>
+    <ul>
+        <li><a href="{% url 'tables2' %}">tables2</a></li>
+    </ul>
 {% endblock content %}

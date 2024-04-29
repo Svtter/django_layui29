@@ -20,7 +20,9 @@ from testapp import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", views.CenterLayout.as_view(), name="center"),
+    path("", views.NormalLayout.as_view(), name="normal"),
     path("normal/", views.NormalLayout.as_view(), name="normal"),
+    path("center/", views.CenterLayout.as_view(), name="center"),
     path("admin2/", views.AdminLayout.as_view(), name="admin"),
+    path("tables2/", views.TableView.as_view(), name="tables2"),
 ]

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     utils.get_appname(),
     "testapp",
+    "django_tables2",
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,10 @@
+{% extends "layui29/layout/normal.html" %}
+{% load django_tables2 %}
+{% comment %} this page is for table list. {% endcomment %}
+
+{% block title %}Table List{% endblock title %}
+
+{% block content %}
+here is the table list.
+{% render_table table %}
+{% endblock content %}
