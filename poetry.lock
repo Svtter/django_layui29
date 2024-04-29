@@ -100,6 +100,23 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-tables2"
+version = "2.7.0"
+description = "Table/data-grid framework for Django"
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-tables2-2.7.0.tar.gz", hash = "sha256:4113fcc575eb438a12e83a4d4ea01452e4800d970e8bdd0e4122ac171af1900d"},
+    {file = "django_tables2-2.7.0-py2.py3-none-any.whl", hash = "sha256:99e06d966ca8ac69fd74092eb45c79a280dd5ca0ccb81395d96261f62128e1af"},
+]
+
+[package.dependencies]
+Django = ">=3.2"
+
+[package.extras]
+tablib = ["tablib"]
+
+[[package]]
 name = "djlint"
 version = "1.34.1"
 description = "HTML Template Linter and Formatter"
@@ -939,4 +956,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<4.0"
-content-hash = "c171c92aaad52295c35fb7b43fbb007f94def4d0e6a7ef99c8dac72566fe8c71"
+content-hash = "6d42eaece6c4cd626a92df6e25fa0c9f3586ba6e97c48198c1a57d44c7dabe9b"
