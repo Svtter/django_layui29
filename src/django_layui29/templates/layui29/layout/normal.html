@@ -1,12 +1,14 @@
 {% extends "layui29/base.html" %}
 {% load static %}
-{% block app %}
-    {% block header %}
-        {% include "layui29/component/base/header.html" %}
-    {% endblock header %}
-    <div class="layui-body">
-        {% block content %}
-            <h2>hello from base layout</h2>
-        {% endblock content %}
+{% block body %}
+    <div>
+        {% block header %}
+            {% include "layui29/component/base/header.html" %}
+        {% endblock header %}
+        <div class="layui-container">
+            {% block content %}
+                <h2>hello from base layout</h2>
+            {% endblock content %}
+        </div>
     </div>
-{% endblock app %}
+{% endblock body %}
