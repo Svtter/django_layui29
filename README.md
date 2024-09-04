@@ -1,5 +1,8 @@
 # django_layui29
 
+[![PyPI](https://img.shields.io/pypi/v/django-layui29.svg)](https://pypi.python.org/pypi/django-layui29/)
+[![Documentation Status](https://readthedocs.org/projects/django-layui29/badge/?version=latest)](https://django-layui29.readthedocs.io/en/latest/?badge=latest) [![Downloads](https://pepy.tech/badge/django-layui29/week)](https://pepy.tech/project/django-layui29)
+
 > WARNING: This project is unstable. Please do not use in your production project.
 
 集成 layui version 2.9.8 的 django 插件。
