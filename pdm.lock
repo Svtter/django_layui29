@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:2a71e215f47d74e58d2a4b1f8f72a6b9b29558a3d5d307a489e10ef791e0661d"
+content_hash = "sha256:e49a6cac833cd4c118df3f222dc56fbaaf8e032e2e0f3b250c2117b813a01d87"
 
 [[metadata.targets]]
 requires_python = "~=3.9"
@@ -330,6 +330,19 @@ dependencies = [
 files = [
     {file = "Django-4.2.16-py3-none-any.whl", hash = "sha256:1ddc333a16fc139fd253035a1606bb24261951bbc3a6ca256717fa06cc41a898"},
     {file = "Django-4.2.16.tar.gz", hash = "sha256:6f1616c2786c408ce86ab7e10f792b8f15742f7b7b7460243929cb371e7f1dad"},
+]
+
+[[package]]
+name = "django-tables2"
+version = "2.7.0"
+summary = "Table/data-grid framework for Django"
+groups = ["default"]
+dependencies = [
+    "Django>=3.2",
+]
+files = [
+    {file = "django-tables2-2.7.0.tar.gz", hash = "sha256:4113fcc575eb438a12e83a4d4ea01452e4800d970e8bdd0e4122ac171af1900d"},
+    {file = "django_tables2-2.7.0-py2.py3-none-any.whl", hash = "sha256:99e06d966ca8ac69fd74092eb45c79a280dd5ca0ccb81395d96261f62128e1af"},
 ]
 
 [[package]]
