@@ -18,7 +18,7 @@
 
 This section lists all features about `django-layui29`.
 
-- `center/admin/nomral` layout.
+- `center/admin/normal` layout.
 - table components.
 
 ### Example project
