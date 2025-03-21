@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "django_layui29"
-version = "0.4.1"
-description = ""
+version = "0.4.2"
+description = "django template based on layui2.9"
 authors = ["svtter <svtter@163.com>"]
 
 [tool.poetry.dependencies]
