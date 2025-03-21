@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django_layui29"
-version = "0.4.2"
+version = "0.4.3"
 description = "django template based on layui2.9"
 authors = ["svtter <svtter@163.com>"]
 
@@ -34,8 +34,8 @@ python_files = "tests.py test_*.py *_tests.py"
 addopts = "-n3"
 
 [tool.poetry.urls]
-homepage = "https://github.com/Svtter/django-layui"
-repository = "https://github.com/Svtter/django-layui.git"
-changelog = "https://github.com/Svtter/django-layui/blob/master/CHANGELOG.md"
-bugs = "https://github.com/Svtter/django-layui/issues"
+homepage = "https://github.com/Svtter/django_layui29"
+repository = "https://github.com/Svtter/django_layui29.git"
+changelog = "https://github.com/Svtter/django_layui29/blob/master/CHANGELOG.md"
+bugs = "https://github.com/Svtter/django_layui29/issues"
 # sponsor = "https://github.com/sponsors/svtter"
