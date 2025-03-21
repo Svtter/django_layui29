@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "django_layui29"
 version = "0.4.1"
-description = ""
+description = "django template based on layui2.9"
 authors = ["svtter <svtter@163.com>"]
 
 [tool.poetry.dependencies]
@@ -39,3 +39,25 @@ repository = "https://github.com/Svtter/django-layui.git"
 changelog = "https://github.com/Svtter/django-layui/blob/master/CHANGELOG.md"
 bugs = "https://github.com/Svtter/django-layui/issues"
 # sponsor = "https://github.com/sponsors/svtter"
+[project]
+authors = [
+    {name = "svtter", email = "svtter@163.com"},
+]
+requires-python = "<4.0,>=3.9"
+dependencies = [
+    "django<6.0",
+]
+name = "django_layui29"
+version = "0.4.1"
+description = ""
+
+[project.urls]
+homepage = "https://github.com/Svtter/django-layui"
+repository = "https://github.com/Svtter/django-layui.git"
+changelog = "https://github.com/Svtter/django-layui/blob/master/CHANGELOG.md"
+bugs = "https://github.com/Svtter/django-layui/issues"
+
+[dependency-groups]
+dev = [
+    "djlint>=1.36.4",
+]

@@ -365,3 +365,5 @@ attach/dictionary/*
 __pypackages__
 
 .coverage
+
+.pdm-python
