@@ -22,8 +22,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
         cache: 'poetry'
     - name: Install Poetry
-      run: |
-        pipx install poetry
+      uses: snok/install-poetry@v1
     - name: Install dependencies
       run: |
         poetry install
