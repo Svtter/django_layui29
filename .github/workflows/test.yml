@@ -21,9 +21,11 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
         cache: 'poetry'
+    - name: Install Poetry
+      run: |
+        pipx install poetry
     - name: Install dependencies
       run: |
-        pip install poetry
         poetry install
     - name: Run tests
       run: |
