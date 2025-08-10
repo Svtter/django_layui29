@@ -367,3 +367,4 @@ __pypackages__
 .coverage
 
 .pdm-python
+.aider*

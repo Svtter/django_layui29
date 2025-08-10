@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+
 from django_layui29 import utils
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -66,6 +67,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "django_layui29.utils.get_layui_from_local",
             ],
         },
     },
@@ -127,3 +129,8 @@ STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# 是否从本地加载 layui 资源
+# 如果为 True，则使用项目自带的 layui.js 和 layui.css
+# 如果为 False，则从 unpkg CDN 加载
+LAYUI_FROM_LOCAL = True
