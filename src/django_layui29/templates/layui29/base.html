@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 引入 layui.css -->
     {% block css %}
+    {% if LAYUI_FROM_LOCAL %}
+    <link rel="stylesheet" href="{% static 'layui29/css/layui.css' %}">
+    {% else %}
     <link href="//unpkg.com/layui@2.9.25/dist/css/layui.css" rel="stylesheet">
+    {% endif %}
     {% endblock css %}
     <title>{% block title %}{% endblock title %}</title>
 </head>
@@ -19,7 +23,10 @@
 {% endblock body %}
 <!-- 引入 layui.js -->
 {% block js %}
+{% if LAYUI_FROM_LOCAL %}
+<script src="{% static 'layui29/layui.js' %}"></script>
+{% else %}
 <script src="//unpkg.com/layui@2.9.25/dist/layui.js"></script>
+{% endif %}
 {% endblock js %}
 </body>
-</html>
