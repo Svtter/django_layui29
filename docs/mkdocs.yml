@@ -1,3 +1,6 @@
-site_name: django_layui
+site_name: django_layui29
 theme:
   name: readthedocs
+
+site_url: https://svtter.github.io/django_layui29/
+repo_url: https://github.com/Svtter/django_layui29
