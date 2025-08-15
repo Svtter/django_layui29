@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://svtter.github.io/django_layui29/advanced/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>高级配置 - django_layui29</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9ad8\u7ea7\u914d\u7f6e";
+        var mkdocs_page_input_path = "advanced.md";
+        var mkdocs_page_url = "/django_layui29/advanced/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> django_layui29
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">首页</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../quickstart/">快速入门</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../components/">组件文档</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../layouts/">布局系统</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">高级配置</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">自定义主题</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">扩展组件</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">创建自定义组件</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">高级配置</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">全局配置</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">性能优化</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#django-rest-framework">与Django REST framework集成</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">多语言支持</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../mkdocs/">文档指南</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">django_layui29</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">高级配置</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Svtter/django_layui29/edit/master/docs/advanced.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="planning">高级配置和扩展 (PLANNING)<a class="headerlink" href="#planning" title="Permanent link">&para;</a></h1>
+<h2 id="_1">自定义主题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>覆盖默认样式：</li>
+</ol>
+<pre class="codehilite"><code class="language-css">/* static/layui29/css/custom.css */
+.layui-card {
+  border-radius: 10px;
+}
+</code></pre>
+
+<ol>
+<li>在模板中引入自定义CSS：</li>
+</ol>
+<pre class="codehilite"><code class="language-html">{% block css %}
+&lt;link rel=&quot;stylesheet&quot; href=&quot;{% static 'layui29/css/custom.css' %}&quot;&gt;
+{% endblock %}
+</code></pre>
+
+<h2 id="_2">扩展组件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">创建自定义组件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>在 <code>templates/layui29/component/</code> 下新建模板文件</li>
+<li>使用现有组件作为基础：</li>
+</ol>
+<pre class="codehilite"><code class="language-html">&lt;!-- templates/layui29/component/custom_widget.html --&gt;
+&lt;div class=&quot;custom-widget&quot;&gt;
+  {% include &quot;layui29/component/tables.html&quot; with table_id=table_id %}
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="_4">高级配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">全局配置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code class="language-python"># settings.py
+LAYUI29_CONFIG = {
+    'HTMX_VERSION': '1.9.4',
+    'LAYUI_THEME': 'dark',  # 可选: default/dark
+    'AUTO_INIT_JS': True    # 是否自动初始化JS
+}
+</code></pre>
+
+<h3 id="_6">性能优化<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ol>
+<li>按需加载组件：</li>
+</ol>
+<pre class="codehilite"><code class="language-javascript">layui.config({
+  base: '/static/layui29/js/'
+}).use(['table', 'layer'], function(){
+  var table = layui.table;
+  var layer = layui.layer;
+});
+</code></pre>
+
+<h2 id="django-rest-framework">与Django REST framework集成<a class="headerlink" href="#django-rest-framework" title="Permanent link">&para;</a></h2>
+<pre class="codehilite"><code class="language-python"># serializers.py
+from rest_framework import serializers
+
+class DataSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Data
+        fields = '__all__'
+
+# views.py
+from rest_framework.viewsets import ModelViewSet
+from .serializers import DataSerializer
+
+class DataViewSet(ModelViewSet):
+    queryset = Data.objects.all()
+    serializer_class = DataSerializer
+</code></pre>
+
+<h2 id="_7">多语言支持<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ol>
+<li>创建翻译文件：</li>
+</ol>
+<pre class="codehilite"><code class="language-python"># app.py
+from django.utils.translation import gettext_lazy as _
+
+class Layui29Config(AppConfig):
+    verbose_name = _('Layui29 Admin')
+</code></pre>
+
+<ol>
+<li>在模板中使用：
+```html
+{% load i18n %}
+<button>{% trans "Submit" %}</button></li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../layouts/" class="btn btn-neutral float-left" title="布局系统"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mkdocs/" class="btn btn-neutral float-right" title="文档指南">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Svtter/django_layui29" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../layouts/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../mkdocs/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
