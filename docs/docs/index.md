@@ -76,7 +76,9 @@ layui.use('table', function(){
 ```
 
 ## 示例项目
+
 查看 `src/testapp/templates/` 目录中的完整示例：
+
 - admin_example.html
 - center_example.html
 - tables.html
