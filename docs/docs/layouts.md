@@ -60,19 +60,20 @@
 ## 布局结构
 
 ### 通用区块
-| 区块名称 | 说明 |
-|----------|------|
+| 区块名称              | 说明                |
+| --------------------- | ------------------- |
 | `{% block content %}` | 主要内容区域 (必需) |
-| `{% block css %}` | 额外CSS样式 |
-| `{% block js %}` | 额外JavaScript |
+| `{% block css %}`     | 额外CSS样式         |
+| `{% block js %}`      | 额外JavaScript      |
 
 ### Admin布局特有区块
-| 区块名称 | 说明 |
-|----------|------|
+| 区块名称               | 说明         |
+| ---------------------- | ------------ |
 | `{% block left_nav %}` | 左侧导航菜单 |
-| `{% block top_nav %}` | 顶部导航栏 |
+| `{% block top_nav %}`  | 顶部导航栏   |
 
-## 布局配置
+## 布局配置 (PLANNING)
+
 在 `settings.py` 中可配置默认布局选项：
 
 ```python
@@ -81,3 +82,4 @@ LAYUI29_LAYOUT_SETTINGS = {
     'ADMIN_TITLE': '管理系统',   # Admin布局标题
     'LOGO_URL': '/static/logo.png' # Logo地址
 }
+```
