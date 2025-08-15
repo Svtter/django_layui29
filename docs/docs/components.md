@@ -22,14 +22,14 @@ layui.use('table', function(){
 ```
 
 ### 配置选项
-| 参数 | 类型 | 说明 |
-|------|------|------|
-| elem | string | 表格容器选择器 |
-| url | string | 数据接口地址 |
-| cols | array | 表头配置 |
-| page | bool/object | 分页配置 |
-| toolbar | string | 工具栏模板 |
-| defaultToolbar | array | 默认工具栏 |
+| 参数           | 类型        | 说明           |
+| -------------- | ----------- | -------------- |
+| elem           | string      | 表格容器选择器 |
+| url            | string      | 数据接口地址   |
+| cols           | array       | 表头配置       |
+| page           | bool/object | 分页配置       |
+| toolbar        | string      | 工具栏模板     |
+| defaultToolbar | array       | 默认工具栏     |
 
 ### 分页表格
 ```javascript
@@ -66,3 +66,4 @@ layui.table.on('tool(dataTable)', function(obj){
     layer.msg('编辑操作: '+ JSON.stringify(data));
   }
 });
+```
