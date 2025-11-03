@@ -1,3 +1,21 @@
-site_name: django_layui
+site_name: django_layui29
 theme:
   name: readthedocs
+
+site_url: https://svtter.github.io/django_layui29/
+repo_url: https://github.com/Svtter/django_layui29
+
+nav:
+  - 首页: index.md
+  - 快速入门: quickstart.md
+  - 组件文档: components.md
+  - 布局系统: layouts.md
+  - 高级配置: advanced.md
+  - 文档指南: mkdocs.md
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - codehilite
+  - admonition
+  - tables
