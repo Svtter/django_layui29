@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://svtter.github.io/django_layui29/components/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>组件文档 - django_layui29</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u7ec4\u4ef6\u6587\u6863";
+        var mkdocs_page_input_path = "components.md";
+        var mkdocs_page_url = "/django_layui29/components/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> django_layui29
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">首页</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../quickstart/">快速入门</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">组件文档</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">表格组件</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">基本用法</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">配置选项</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">分页表格</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">工具栏</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">表格事件</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../layouts/">布局系统</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../advanced/">高级配置</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../mkdocs/">文档指南</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">django_layui29</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">组件文档</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Svtter/django_layui29/edit/master/docs/components.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">组件使用文档<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">表格组件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">基本用法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code class="language-html">{% include &quot;layui29/component/tables.html&quot; with table_id=&quot;dataTable&quot; %}
+
+&lt;script&gt;
+layui.use('table', function(){
+  layui.table.render({
+    elem: '#dataTable',
+    url: '/api/data/',
+    cols: [[
+      {field: 'id', title: 'ID', width: 80},
+      {field: 'name', title: '名称'},
+      {field: 'status', title: '状态'}
+    ]]
+  });
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="_4">配置选项<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>elem</td>
+<td>string</td>
+<td>表格容器选择器</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>数据接口地址</td>
+</tr>
+<tr>
+<td>cols</td>
+<td>array</td>
+<td>表头配置</td>
+</tr>
+<tr>
+<td>page</td>
+<td>bool/object</td>
+<td>分页配置</td>
+</tr>
+<tr>
+<td>toolbar</td>
+<td>string</td>
+<td>工具栏模板</td>
+</tr>
+<tr>
+<td>defaultToolbar</td>
+<td>array</td>
+<td>默认工具栏</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">分页表格<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code class="language-javascript">layui.table.render({
+  elem: '#pagedTable',
+  url: '/api/paged-data/',
+  page: true,
+  cols: [[
+    {field: 'id', title: 'ID'},
+    {field: 'username', title: '用户名'}
+  ]]
+});
+</code></pre>
+
+<h3 id="_6">工具栏<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code class="language-javascript">layui.table.render({
+  elem: '#toolTable',
+  toolbar: '#toolbarDemo',
+  cols: [[
+    {field: 'id', title: 'ID'},
+    {field: 'content', title: '内容'}
+  ]]
+});
+</code></pre>
+
+<h3 id="_7">表格事件<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code class="language-javascript">layui.table.on('tool(dataTable)', function(obj){
+  var data = obj.data;
+  var layEvent = obj.event;
+
+  if(layEvent === 'edit'){
+    layer.msg('编辑操作: '+ JSON.stringify(data));
+  }
+});
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../quickstart/" class="btn btn-neutral float-left" title="快速入门"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../layouts/" class="btn btn-neutral float-right" title="布局系统">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Svtter/django_layui29" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../quickstart/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../layouts/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

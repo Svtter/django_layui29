@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://svtter.github.io/django_layui29/layouts/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>布局系统 - django_layui29</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u5e03\u5c40\u7cfb\u7edf";
+        var mkdocs_page_input_path = "layouts.md";
+        var mkdocs_page_url = "/django_layui29/layouts/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> django_layui29
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">首页</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../quickstart/">快速入门</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../components/">组件文档</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">布局系统</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">布局类型</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-centerhtml">1. 居中布局 (center.html)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-adminhtml">2. 管理后台布局 (admin.html)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-homehtml">3. 主页布局 (home.html)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">布局结构</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">通用区块</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#admin">Admin布局特有区块</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#planning">布局配置 (PLANNING)</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../advanced/">高级配置</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../mkdocs/">文档指南</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">django_layui29</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">布局系统</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Svtter/django_layui29/edit/master/docs/layouts.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">布局系统详解<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">布局类型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1-centerhtml">1. 居中布局 (center.html)<a class="headerlink" href="#1-centerhtml" title="Permanent link">&para;</a></h3>
+<p>适用于内容居中展示的页面，如登录页、展示页等。</p>
+<pre class="codehilite"><code class="language-html">{% extends &quot;layui29/layout/center.html&quot; %}
+
+{% block content %}
+&lt;!-- 主要内容区域 --&gt;
+&lt;div class=&quot;layui-card&quot;&gt;
+  &lt;div class=&quot;layui-card-header&quot;&gt;标题&lt;/div&gt;
+  &lt;div class=&quot;layui-card-body&quot;&gt;
+    内容区域
+  &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+
+<h3 id="2-adminhtml">2. 管理后台布局 (admin.html)<a class="headerlink" href="#2-adminhtml" title="Permanent link">&para;</a></h3>
+<p>包含左侧导航和顶部导航栏，适合后台管理系统。</p>
+<pre class="codehilite"><code class="language-html">{% extends &quot;layui29/layout/admin.html&quot; %}
+
+{% block left_nav %}
+&lt;!-- 自定义左侧导航 --&gt;
+&lt;ul class=&quot;layui-nav layui-nav-tree&quot;&gt;
+  &lt;li class=&quot;layui-nav-item layui-nav-itemed&quot;&gt;
+    &lt;a href=&quot;javascript:;&quot;&gt;控制台&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+{% endblock %}
+
+{% block content %}
+&lt;!-- 主要内容区域 --&gt;
+{% endblock %}
+</code></pre>
+
+<h3 id="3-homehtml">3. 主页布局 (home.html)<a class="headerlink" href="#3-homehtml" title="Permanent link">&para;</a></h3>
+<p>适合门户网站首页，包含顶部通栏导航。</p>
+<pre class="codehilite"><code class="language-html">{% extends &quot;layui29/layout/home.html&quot; %}
+
+{% block header %}
+&lt;!-- 自定义顶部导航 --&gt;
+&lt;ul class=&quot;layui-nav&quot;&gt;
+  &lt;li class=&quot;layui-nav-item&quot;&gt;&lt;a href=&quot;&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+{% endblock %}
+
+{% block content %}
+&lt;!-- 主要内容区域 --&gt;
+{% endblock %}
+</code></pre>
+
+<h2 id="_3">布局结构<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">通用区块<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>区块名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{% block content %}</code></td>
+<td>主要内容区域 (必需)</td>
+</tr>
+<tr>
+<td><code>{% block css %}</code></td>
+<td>额外CSS样式</td>
+</tr>
+<tr>
+<td><code>{% block js %}</code></td>
+<td>额外JavaScript</td>
+</tr>
+</tbody>
+</table>
+<h3 id="admin">Admin布局特有区块<a class="headerlink" href="#admin" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>区块名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{% block left_nav %}</code></td>
+<td>左侧导航菜单</td>
+</tr>
+<tr>
+<td><code>{% block top_nav %}</code></td>
+<td>顶部导航栏</td>
+</tr>
+</tbody>
+</table>
+<h2 id="planning">布局配置 (PLANNING)<a class="headerlink" href="#planning" title="Permanent link">&para;</a></h2>
+<p>在 <code>settings.py</code> 中可配置默认布局选项：</p>
+<pre class="codehilite"><code class="language-python">LAYUI29_LAYOUT_SETTINGS = {
+    'DEFAULT_LAYOUT': 'center',  # 默认布局
+    'ADMIN_TITLE': '管理系统',   # Admin布局标题
+    'LOGO_URL': '/static/logo.png' # Logo地址
+}
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../components/" class="btn btn-neutral float-left" title="组件文档"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../advanced/" class="btn btn-neutral float-right" title="高级配置">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Svtter/django_layui29" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../components/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../advanced/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
