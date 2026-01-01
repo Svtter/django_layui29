@@ -1,6 +1,7 @@
 # django_layui29
 
-[English](./README.md)
+[![English](https://img.shields.io/badge/English-文档-blue)](./README.md)
+[![Run Tests](https://github.com/Svtter/django_layui29/actions/workflows/test.yml/badge.svg)](https://github.com/Svtter/django_layui29/actions/workflows/test.yml)
 
 > **警告：** 此项目尚不稳定，请勿在生产环境中使用。
 
