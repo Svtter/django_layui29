@@ -88,3 +88,7 @@ INSTALLED_APPS = [
 ## 示例项目
 
 你可以运行[仓库](https://github.com/Svtter/django_layui29.git)中包含的 `testapp` 来查看各项功能的实际效果。
+
+## 赞助
+
+如果你觉得这个项目对你有帮助，欢迎在 [Ko-fi](https://ko-fi.com/svtter) 上支持我。

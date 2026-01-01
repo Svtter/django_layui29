@@ -88,3 +88,7 @@ INSTALLED_APPS = [
 ## Example Project
 
 You can run the `testapp` included in the [repository](https://github.com/Svtter/django_layui29.git) to see the features in action.
+
+## Funding
+
+If you find this project helpful, consider supporting me on [Ko-fi](https://ko-fi.com/svtter).

@@ -82,3 +82,7 @@ layui.use('table', function(){
 - admin_example.html
 - center_example.html
 - tables.html
+
+## 赞助
+
+如果你觉得这个项目对你有帮助，欢迎在 [Ko-fi](https://ko-fi.com/svtter) 上支持我。
