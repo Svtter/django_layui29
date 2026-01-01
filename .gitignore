@@ -368,3 +368,5 @@ __pypackages__
 
 .pdm-python
 .aider*
+
+.claude/settings.local.json
